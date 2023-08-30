@@ -1,18 +1,11 @@
 const fs = require('fs');
 const dataForge = require('data-forge');
 
-const data = []
-
-
 const csvString = fs.readFileSync('./recall_data.csv').toString();
-const dataFrame = dataForge.fromCSV(csvString).setIndex('date').dropSeries(['','index']).parseDates('date').parseFloats('recall');
+const dataFrame = dataForge.fromCSV(csvString).dropSeries(['','index']).parseDates('date').parseFloats('recall').setIndex('date');
 
 const getRecalls = (from_ts,to_ts)=>{
-    // if(from_ts && to_ts){
-    //     return dataFrame.between()
-    // }
-    // TODO: add from and to support
-    return dataFrame.toArray();
+    return dataFrame.between(new Date(from_ts),new Date(to_ts)).toArray();
 }
 
 module.exports = {
