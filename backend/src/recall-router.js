@@ -1,6 +1,5 @@
-const { getRecalls } = require('./recall-bl');
-
 const { Router } = require('express');
+const { getRecalls } = require('./recall-bl');
 
 const router = Router();
 
