@@ -19,8 +19,8 @@ in frontend folder run:
 
 
 ```
-npm ci
-npm start
+npm install
+npm run dev
 ```
 
 Now you have both running locally, go to the frontend url to go to the app.
