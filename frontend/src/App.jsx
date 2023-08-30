@@ -38,7 +38,7 @@ const App = () => {
       <p className="text-3xl border w-fit rounded-lg p-2 font-bold">Superwise</p>
       {isLoading && <h1>Loading...</h1>}
       {error && <h1 className="text-red-400">Error {error}</h1>}
-      <div className="w-full h-4/5">
+      <div className="w-full h-96">
         {recalls !== null && (
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
