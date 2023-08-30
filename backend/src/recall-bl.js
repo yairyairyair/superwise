@@ -5,7 +5,7 @@ const data = []
 
 
 const csvString = fs.readFileSync('./recall_data.csv').toString();
-const dataFrame = dataForge.fromCSV(csvString).setIndex('date').dropSeries(['','index']).parseDates('date');
+const dataFrame = dataForge.fromCSV(csvString).setIndex('date').dropSeries(['','index']).parseDates('date').parseFloats('recall');
 
 const getRecalls = (from_ts,to_ts)=>{
     // if(from_ts && to_ts){
